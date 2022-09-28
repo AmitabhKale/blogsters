@@ -1,11 +1,12 @@
 import React from "react";
 import { Form, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import FormContainer from "../components/FormContainer";
 
 const LoginPage = () => {
   return (
     <FormContainer>
-      <h3>Login Page</h3>
+      <h3 className="text-info">Login Page</h3>
       <Form>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
@@ -26,6 +27,10 @@ const LoginPage = () => {
           Login
         </Button>
       </Form>
+      <p className="my-3">
+        Didnt have Credentials?.. <br />
+        <Link to="/register">Click Here to Register</Link>
+      </p>
     </FormContainer>
   );
 };

@@ -18,8 +18,8 @@ const HomePage = () => {
         <h4 className="px-2">Featured Blogs</h4>
         <Row className="p-1">
           {allBlogs.map((blog) => (
-            <Col sm={12} md={6} lg={4}>
-              <BlogCard key={blog.id} blog={blog} />
+            <Col key={blog.id} sm={12} md={6} lg={4}>
+              <BlogCard blog={blog} />
             </Col>
           ))}
         </Row>

@@ -7,9 +7,19 @@ import {
   NavDropdown,
   Button,
 } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../features/auth/authSlice";
 
 const Header = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const { user } = useSelector((state) => state.auth);
+
+  const logoutHandler = () => {
+    dispatch(logout());
+  };
   return (
     <div>
       <Navbar bg="dark" variant="dark" expand="lg">
@@ -24,18 +34,31 @@ const Header = () => {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Button>Create</Button>
+              <Button className="mx-3">Create</Button>
 
-              <NavDropdown
-                variant="dark"
-                title="John"
-                id="navbarScrollingDropdown"
-              >
-                <NavDropdown.Item href="#action3">Profile</NavDropdown.Item>
-                <NavDropdown.Item href="#action4">My Blogs</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action5">Sign Out</NavDropdown.Item>
-              </NavDropdown>
+              {user ? (
+                <NavDropdown
+                  variant="dark"
+                  title={user.name}
+                  id="navbarScrollingDropdown"
+                >
+                  <NavDropdown.Item href="#action3">Profile</NavDropdown.Item>
+                  <NavDropdown.Item href="#action4">My Blogs</NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item onClick={logoutHandler}>
+                    Logout
+                  </NavDropdown.Item>
+                </NavDropdown>
+              ) : (
+                <Button
+                  variant="dark"
+                  onClick={() => {
+                    navigate("/login");
+                  }}
+                >
+                  Login
+                </Button>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>
