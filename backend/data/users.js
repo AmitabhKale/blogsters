@@ -21,3 +21,5 @@ const users = [
     isVerified: true,
   },
 ];
+
+module.exports = users;

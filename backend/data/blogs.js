@@ -24,9 +24,11 @@ const blogs = [
     description:
       "All developers are clever and can write code, but it’s the wise developers who can create software efficiently by avoiding problems, reducing technical debt and not making the same mistakes twice. The wise developers avoids problems and avoid getting burnt.",
     moreinfo: `
-    
+    # Not thing
     `,
     readTime: "10 min",
     category: "programming",
   },
 ];
+
+module.exports = blogs;
