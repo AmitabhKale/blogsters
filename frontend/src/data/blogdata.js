@@ -8,7 +8,14 @@ export const blogs = [
     extraImages: [],
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum sit deleniti eveniet magnam tenetur? Recusandae accusantium totam consequuntur aut consectetur hic distinctio! Dolor nobis eos qui cumque non aspernatur quos?",
-    moreinfo: "More Info",
+    moreinfo: `### Trend is new but Utilizes Few 
+
+    - Athestic
+    - Comedian
+    - Drinkers
+
+     Always New life didnt work as ex
+    `,
     quotes: [],
     author: "Ryan",
     read_time: "7 min",

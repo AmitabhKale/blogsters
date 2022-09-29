@@ -34,7 +34,14 @@ const Header = () => {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Button className="mx-3">Create</Button>
+              <Button
+                onClick={() => {
+                  navigate("/new");
+                }}
+                className="mx-3"
+              >
+                Create
+              </Button>
 
               {user ? (
                 <NavDropdown
