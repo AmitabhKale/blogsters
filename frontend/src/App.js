@@ -8,6 +8,7 @@ import BlogPage from "./pages/BlogPage";
 import NewBlogPage from "./pages/NewBlogPage";
 import EditBlogPage from "./pages/EditBlogPage";
 import RegisterPage from "./pages/RegisterPage";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
@@ -17,11 +18,12 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/blog/:blogid" element={<BlogPage />} />
-        <Route path="/new" element={<NewBlogPage />} />
+        <Route path="/blog/:slug" element={<BlogPage />} />
 
-        {/* EditBlog Page and NewBlogPage need Auth */}
-        <Route path="/blog/blog-id/edit" element={<EditBlogPage />} />
+        <Route path="/blog" element={<PrivateRoute />}>
+          <Route path="/blog/create" element={<NewBlogPage />} />
+          <Route path="/blog/blog-id/edit" element={<EditBlogPage />} />
+        </Route>
       </Routes>
     </Router>
   );

@@ -36,7 +36,7 @@ const Header = () => {
             >
               <Button
                 onClick={() => {
-                  navigate("/new");
+                  navigate("/blog/create");
                 }}
                 className="mx-3"
               >
