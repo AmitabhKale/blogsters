@@ -20,9 +20,9 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/blog/:slug" element={<BlogPage />} />
 
-        <Route path="/blog" element={<PrivateRoute />}>
+        <Route path="/blog/create" element={<PrivateRoute />}>
           <Route path="/blog/create" element={<NewBlogPage />} />
-          <Route path="/blog/blog-id/edit" element={<EditBlogPage />} />
+          {/* <Route path="/blog/blog-id/edit" element={<EditBlogPage />} /> */}
         </Route>
       </Routes>
     </Router>

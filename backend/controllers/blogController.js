@@ -15,7 +15,7 @@ const getAllBlogs = asyncHandler(async (req, res) => {
 // @route   api/blog
 // @access  Private
 const createBlog = asyncHandler(async (req, res) => {
-  const { title, description, moreinfo } = req.body;
+  const { title, subTitle, description, imageUrl, moreinfo } = req.body;
 
   if (!title || !description) {
     res.status(400);
@@ -33,7 +33,9 @@ const createBlog = asyncHandler(async (req, res) => {
   const blog = await Blog.create({
     user: req.user.id,
     title,
+    subTitle,
     description,
+    imageUrl,
     moreinfo,
   });
 
