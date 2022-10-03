@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { blogs } from "../data/blogdata";
 
 const BlogPage = () => {
-  //   const [allBlogs] = useState(blogs);
+  // const [allBlogs] = useState(blogs);
   let params = useParams();
   //   console.log(params);
   const blog = blogs.find((b) => b.id === params.blogid);

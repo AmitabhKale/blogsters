@@ -2,8 +2,8 @@ const asyncHandler = require("express-async-handler");
 const Blog = require("../models/blogModel");
 const User = require("../models/userModel");
 
-// @desc    Get Blog By Id
-// @route   ai/blog/:id
+// @desc    Get All Blog
+// @route   api/blog
 // @access  Public
 const getAllBlogs = asyncHandler(async (req, res) => {
   const blogs = await Blog.find();

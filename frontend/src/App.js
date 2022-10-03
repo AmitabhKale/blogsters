@@ -9,6 +9,7 @@ import NewBlogPage from "./pages/NewBlogPage";
 import EditBlogPage from "./pages/EditBlogPage";
 import RegisterPage from "./pages/RegisterPage";
 import PrivateRoute from "./components/PrivateRoute";
+import AllBlogsPage from "./pages/AllBlogsPage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/blog/:slug" element={<BlogPage />} />
+        <Route path="/blogs/all" element={<AllBlogsPage />} />
 
         <Route path="/blog/create" element={<PrivateRoute />}>
           <Route path="/blog/create" element={<NewBlogPage />} />

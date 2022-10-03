@@ -164,3 +164,5 @@ export const blogs = [
     ],
   },
 ];
+
+export default blogs;

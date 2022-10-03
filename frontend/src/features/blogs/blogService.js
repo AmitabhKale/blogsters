@@ -13,12 +13,18 @@ const createBlog = async (blogData, token) => {
   return response.data;
 };
 
-// Get All Blog
+// Get All Blogs
+const getAllBlogs = async () => {
+  const response = await axios.get(API_URL);
+
+  return response.data;
+};
 
 // Get Single User Blogs
 
 const blogService = {
   createBlog,
+  getAllBlogs,
 };
 
 export default blogService;

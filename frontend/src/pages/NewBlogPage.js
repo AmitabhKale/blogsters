@@ -21,7 +21,7 @@ const NewBlogPage = () => {
   const [moreinfo, setMoreinfo] = useState(``);
 
   const { isLoading, isError, isSuccess, message } = useSelector(
-    (state) => state.blog
+    (state) => state.blogs
   );
 
   const dispatch = useDispatch();

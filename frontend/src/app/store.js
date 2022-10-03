@@ -4,7 +4,7 @@ import blogReducer from "../features/blogs/blogSlice";
 
 export const store = configureStore({
   reducer: {
-    blog: blogReducer,
     auth: authReducer,
+    blogs: blogReducer,
   },
 });
